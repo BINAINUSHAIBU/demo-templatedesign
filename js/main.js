@@ -9,7 +9,7 @@
             }
         }, 1);
     };
-    spinner(0);
+    spinner();
     
     
     // Initiate the wowjs
@@ -18,27 +18,26 @@
 
     // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+        if ($(this).scrollTop() > 300) {
+            $('.sticky-top').addClass('bg-primary shadow-sm').css('top', '0px');
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            $('.sticky-top').removeClass('bg-primary shadow-sm').css('top', '-150px');
         }
     });
-
-
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-
-
+    
 })(jQuery);
 
